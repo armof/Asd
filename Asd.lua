@@ -708,12 +708,12 @@ else
 UserInfousername = '['..UserInfo.first_name..'](tg://user?id='..UserId..')'
 end
 return {
-Lock     = '[- -『 HAMZA』 .](https://t.me/hamza_gsg)\n*ٴ•━━━━━━HAMZA━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه المسح *',
-unLock   = '[- -『 HAMZA』 .](https://t.me/hamza_gsg)\n*ٴ•━━━━━━HAMZA━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n'..TextMsg,
-lockKtm  = '[- -『 HAMZA』 .](https://t.me/hamza_gsg)\n*ٴ•━━━━━━HAMZA━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه الكتم *',
-lockKid  = '[- -『 HAMZA』 .](https://t.me/hamza_gsg)\n*ٴ•━━━━━━HAMZA━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه التقييد *',
-lockKick = '[- -『 HAMZA』 .](https://t.me/hamza_gsg)\n*ٴ•━━━━━━HAMZA━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه الطرد *',
-Reply    = '[- -『 HAMZA』 .](https://t.me/hamza_gsg)\n*ٴ•━━━━━━HAMZA━━━━━━━•ٴ\n⌔︙المستخدم ← *'..UserInfousername..'\n*'..TextMsg..'*'
+Lock     = '[- -『 𝘽,𝙍,𝘼 Source』 .](https://t.me/hamza_gsg)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه المسح *',
+unLock   = '[- -『 𝘽,𝙍,𝘼 Source』 .](https://t.me/hamza_gsg)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n'..TextMsg,
+lockKtm  = '[- -『 𝘽,𝙍,𝘼 Source』 .](https://t.me/hamza_gsg)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه الكتم *',
+lockKid  = '[- -『 𝘽,𝙍,𝘼 Source』 .](https://t.me/hamza_gsg)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه التقييد *',
+lockKick = '[- -『 𝘽,𝙍,𝘼 Source』 .](https://t.me/hamza_gsg)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه الطرد *',
+Reply    = '[- -『 𝘽,𝙍,𝘼 Source』 .](https://t.me/hamza_gsg)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙المستخدم ← *'..UserInfousername..'\n*'..TextMsg..'*'
 }
 end
 function StatusCanOrNotCan(ChatId,UserId)
@@ -1506,7 +1506,7 @@ text = text:gsub('"',"")
 text = text:gsub('"',"") 
 text = text:gsub("`","") 
 text = text:gsub("*","") 
-Redis:set(Asd.."Asd:Add:Rd:Manager:Text"..test..msg_chat_id, text)  
+Redis:set(Asd.."Asd:Add:Rd:Manager:Text"..test..msg_chat_id,'[' ..text..']')  
 end  
 if msg.content.audio then
 Redis:set(Asd.."Asd:Add:Rd:Manager:Audio"..test..msg_chat_id, msg.content.audio.audio.remote.id)  
@@ -1540,7 +1540,7 @@ end
 if text and text:match("^(.*)$") then
 if Redis:get(Asd.."Asd:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id) == "true" then
 Redis:set(Asd.."Asd:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true1")
-Redis:set(Asd.."Asd:Text:Manager"..msg.sender.user_id..":"..msg_chat_id, text)
+Redis:set(Asd.."Asd:Text:Manager"..msg.sender.user_id..":"..msg_chat_id,text)
 Redis:del(Asd.."Asd:Add:Rd:Manager:Gif"..text..msg_chat_id)   
 Redis:del(Asd.."Asd:Add:Rd:Manager:Vico"..text..msg_chat_id)   
 Redis:del(Asd.."Asd:Add:Rd:Manager:Stekrs"..text..msg_chat_id)     
@@ -1556,7 +1556,7 @@ LuaTele.sendText(msg_chat_id,msg_id,[[
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
 ↯︙يمكنك اضافة الى النص •
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
  `#username` ↬ معرف المستخدم
  `#msgs` ↬ عدد الرسائل
  `#name` ↬ اسم المستخدم
@@ -1656,7 +1656,7 @@ local Texingt = Texingt:gsub('#id',msg.sender.user_id)
 local Texingt = Texingt:gsub('#edit',NumMessageEdit)
 local Texingt = Texingt:gsub('#msgs',NumMsg)
 local Texingt = Texingt:gsub('#stast',Status_Gps)
-LuaTele.sendText(msg_chat_id,msg_id,Texingt,"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,'['..Texingt..']',"md",true)  
 end
 if video_note then
 LuaTele.sendVideoNote(msg_chat_id, msg.id, video_note)
@@ -1739,7 +1739,7 @@ LuaTele.sendText(msg_chat_id,msg_id,[[
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
 ↯︙يمكنك اضافة الى النص •
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
  `#username` ↬ معرف المستخدم
  `#msgs` ↬ عدد الرسائل
  `#name` ↬ اسم المستخدم
@@ -2483,7 +2483,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Asd..'Asd:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-LuaTele.sendText(msg_chat_id,msg_id,'*⌔︙عدد احصائيات البوت الكامله \nٴ•━━━━━━HAMZA━━━━━━━•ٴ\n⌔︙عدد المجموعات : '..(Redis:scard(Asd..'Asd:ChekBotAdd') or 0)..'\n⌔︙عدد المشتركين : '..(Redis:scard(Asd..'Asd:Num:User:Pv') or 0)..'*',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,'*⌔︙عدد احصائيات البوت الكامله \nٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙عدد المجموعات : '..(Redis:scard(Asd..'Asd:ChekBotAdd') or 0)..'\n⌔︙عدد المشتركين : '..(Redis:scard(Asd..'Asd:Num:User:Pv') or 0)..'*',"md",true)  
 end
 if text == 'تفعيل' and msg.Developers then
 if msg.can_be_deleted_for_all_users == false then
@@ -2841,7 +2841,7 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '❬ ✅ ❭' else promote = '❬ ❌ ❭'
 end
-PermissionsUser = '*\n⌔︙صلاحيات المستخدم :\nٴ•━━━━━━HAMZA━━━━━━━•ٴ'..'\n⌔︙تغيير المعلومات : '..change_info..'\n⌔︙تثبيت الرسائل : '..pin_messages..'\n⌔︙اضافه مستخدمين : '..invite_users..'\n⌔︙مسح الرسائل : '..delete_messages..'\n⌔︙حظر المستخدمين : '..restrict_members..'\n⌔︙اضافه المشرفين : '..promote..'\n\n*'
+PermissionsUser = '*\n⌔︙صلاحيات المستخدم :\nٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ'..'\n⌔︙تغيير المعلومات : '..change_info..'\n⌔︙تثبيت الرسائل : '..pin_messages..'\n⌔︙اضافه مستخدمين : '..invite_users..'\n⌔︙مسح الرسائل : '..delete_messages..'\n⌔︙حظر المستخدمين : '..restrict_members..'\n⌔︙اضافه المشرفين : '..promote..'\n\n*'
 end
 return LuaTele.sendText(msg_chat_id,msg_id,
 '\n*⌔︙ايديك : '..UserId..
@@ -2884,7 +2884,7 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '❬ ✅ ❭' else promote = '❬ ❌ ❭'
 end
-PermissionsUser = '*\n⌔︙صلاحيات البوت في المجموعه :\nٴ•━━━━━━HAMZA━━━━━━━•ٴ'..'\n⌔︙تغيير المعلومات : '..change_info..'\n⌔︙تثبيت الرسائل : '..pin_messages..'\n⌔︙اضافه مستخدمين : '..invite_users..'\n⌔︙مسح الرسائل : '..delete_messages..'\n⌔︙حظر المستخدمين : '..restrict_members..'\n⌔︙اضافه المشرفين : '..promote..'\n\n*'
+PermissionsUser = '*\n⌔︙صلاحيات البوت في المجموعه :\nٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ'..'\n⌔︙تغيير المعلومات : '..change_info..'\n⌔︙تثبيت الرسائل : '..pin_messages..'\n⌔︙اضافه مستخدمين : '..invite_users..'\n⌔︙مسح الرسائل : '..delete_messages..'\n⌔︙حظر المستخدمين : '..restrict_members..'\n⌔︙اضافه المشرفين : '..promote..'\n\n*'
 return LuaTele.sendText(msg_chat_id,msg_id,PermissionsUser,"md",true) 
 end
 
@@ -3813,7 +3813,7 @@ local Info_Members = Redis:smembers(Asd.."Asd:DevelopersQ:Groups")
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙لا يوجد مطورين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌔︙قائمه مطورين الثانويين \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+ListMembers = '\n*⌔︙قائمه مطورين الثانويين \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -3839,7 +3839,7 @@ local Info_Members = Redis:smembers(Asd.."Asd:Developers:Groups")
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙لا يوجد مطورين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌔︙قائمه مطورين البوت \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+ListMembers = '\n*⌔︙قائمه مطورين البوت \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -3865,7 +3865,7 @@ local Info_Members = Redis:smembers(Asd.."Asd:TheBasics:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙لا يوجد منشئين اساسيين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌔︙قائمه المنشئين الاساسيين \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+ListMembers = '\n*⌔︙قائمه المنشئين الاساسيين \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -3891,7 +3891,7 @@ local Info_Members = Redis:smembers(Asd.."Asd:Originators:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙لا يوجد منشئين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌔︙قائمه المنشئين  \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+ListMembers = '\n*⌔︙قائمه المنشئين  \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -3917,7 +3917,7 @@ local Info_Members = Redis:smembers(Asd.."Asd:Managers:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙لا يوجد مدراء حاليا , ","md",true)  
 end
-ListMembers = '\n*⌔︙قائمه المدراء  \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+ListMembers = '\n*⌔︙قائمه المدراء  \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -3943,7 +3943,7 @@ local Info_Members = Redis:smembers(Asd.."Asd:Addictive:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙لا يوجد ادمنيه حاليا , ","md",true)  
 end
-ListMembers = '\n*⌔︙قائمه الادمنيه  \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+ListMembers = '\n*⌔︙قائمه الادمنيه  \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -3969,7 +3969,7 @@ local Info_Members = Redis:smembers(Asd.."Asd:Distinguished:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙لا يوجد مميزين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌔︙قائمه المميزين  \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+ListMembers = '\n*⌔︙قائمه المميزين  \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -3995,7 +3995,7 @@ local Info_Members = Redis:smembers(Asd.."Asd:BanAll:Groups")
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙لا يوجد محظورين عام حاليا , ","md",true)  
 end
-ListMembers = '\n*⌔︙قائمه المحظورين عام  \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+ListMembers = '\n*⌔︙قائمه المحظورين عام  \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4021,7 +4021,7 @@ local Info_Members = Redis:smembers(Asd.."Asd:BanGroup:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙لا يوجد محظورين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌔︙قائمه المحظورين  \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+ListMembers = '\n*⌔︙قائمه المحظورين  \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4047,7 +4047,7 @@ local Info_Members = Redis:smembers(Asd.."Asd:SilentGroup:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙لا يوجد مكتومين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌔︙قائمه المكتومين  \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+ListMembers = '\n*⌔︙قائمه المكتومين  \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5565,7 +5565,7 @@ if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌔︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
-listAdmin = '\n*⌔︙قائمه الادمنيه \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+listAdmin = '\n*⌔︙قائمه الادمنيه \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 local List_Members = Info_Members.members
 for k, v in pairs(List_Members) do
 if Info_Members.members[k].status.luatele == "chatMemberStatusCreator" then
@@ -5648,7 +5648,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌔︙عذرآ البوت ليس 
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Bots", "*", 0, 200)
 local List_Members = Info_Members.members
-listBots = '\n*⌔︙قائمه البوتات \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+listBots = '\n*⌔︙قائمه البوتات \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 x = 0
 for k, v in pairs(List_Members) do
 local UserInfo = LuaTele.getUser(v.member_id.user_id)
@@ -5660,7 +5660,7 @@ Admin = ""
 end
 listBots = listBots.."*"..k.." - @"..UserInfo.username.."* "..Admin.."\n"
 end
-LuaTele.sendText(msg_chat_id,msg_id,listBots.."*\nٴ•━━━━━━HAMZA━━━━━━━•ٴ\n⌔︙عدد البوتات التي هي ادمن ( "..x.." )*","md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,listBots.."*\nٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙عدد البوتات التي هي ادمن ( "..x.." )*","md",true)  
 end
 
 
@@ -5680,7 +5680,7 @@ local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Recent", "*", 0,
 local List_Members = Info_Members.members
 x = 0
 y = nil
-restricted = '\n*⌔︙قائمه المقيديين \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+restricted = '\n*⌔︙قائمه المقيديين \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(List_Members) do
 if Info_Members.members[k].status.is_member == true and Info_Members.members[k].status.luatele == "chatMemberStatusRestricted" then
 y = true
@@ -5720,7 +5720,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك �
 end
 local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 200)
 local List_Members = Info_Members.members
-listall = '\n*⌔︙قائمه الاعضاء \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+listall = '\n*⌔︙قائمه الاعضاء \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(List_Members) do
 local UserInfo = LuaTele.getUser(v.member_id.user_id)
 if UserInfo.username ~= "" then
@@ -7463,7 +7463,7 @@ local list = Redis:smembers(Asd.."Asd:List:Filter"..msg_chat_id)
 if #list == 0 then  
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌔︙لا يوجد كلمات ممنوعه هنا *","md",true)   
 end  
-Filter = '\n*⌔︙قائمه المنع \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+Filter = '\n*⌔︙قائمه المنع \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k,v in pairs(list) do  
 print(v)
 if v:match('photo:(.*)') then
@@ -7553,7 +7553,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(Asd.."Asd:Command:List:Group"..msg_chat_id.."")
-Command = "⌔︙قائمه الاوامر المضافه  \nٴ•━━━━━━HAMZA━━━━━━━•ٴ\n"
+Command = "⌔︙قائمه الاوامر المضافه  \nٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n"
 for k,v in pairs(list) do
 Commands = Redis:get(Asd.."Asd:Get:Reides:Commands:Group"..msg_chat_id..":"..v)
 if Commands then 
@@ -7643,7 +7643,7 @@ data = {
 {text = 'تعطيل الترحيب', data = msg.sender.user_id..'/'.. 'unmute_welcome'},{text = 'تفعيل الترحيب', data = msg.sender.user_id..'/'.. 'mute_welcome'},
 },
 {
-{text = 'تعطيل الايدي', data = msg.sender.user_id..'/'.. 'unmute_Id'},{text = 'تفعيل الايدي', data = msg.sender.user_id..'/'.. 'mute_Id'},
+{text = 'اتعطيل الايدي', data = msg.sender.user_id..'/'.. 'unmute_Id'},{text = 'اتفعيل الايدي', data = msg.sender.user_id..'/'.. 'mute_Id'},
 },
 {
 {text = 'تعطيل الايدي بالصوره', data = msg.sender.user_id..'/'.. 'unmute_IdPhoto'},{text = 'تفعيل الايدي بالصوره', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
@@ -7714,7 +7714,7 @@ end
 if Redis:get(Asd.."Asd:Status:AddMe"..msg.chat_id) then
 StatusAddme = '❬ ✅ ❭' else StatusAddme = '❬ ❌ ❭'
 end
-local protectionGroup = '\n*⌔︙اعدادات حمايه المجموعه\n ٴ•━━━━━━HAMZA━━━━━━━•ٴ\n'
+local protectionGroup = '\n*⌔︙اعدادات حمايه المجموعه\n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n'
 ..'\n⌔︙جلب الرابط ➤ '..Statuslink
 ..'\n⌔︙جلب الترحيب ➤ '..StatusWelcome
 ..'\n⌔︙الايدي ➤ '..StatusId
@@ -7729,7 +7729,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'ٴ•━━━━━━HAMZA━━━━━━━•ٴ', url = 't.me/hamza_gsg'}, 
+{text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/hamza_gsg'}, 
 },
 }
 }
@@ -7832,8 +7832,8 @@ end
 if Get_Chat.permissions.can_send_polls then
 polls = '❬ ✅ ❭' else polls = '❬ ❌ ❭'
 end
-local permissions = '*\n⌔︙صلاحيات المجموعه :\nٴ•━━━━━━HAMZA━━━━━━━•ٴ'..'\n⌔︙ارسال الويب : '..web..'\n⌔︙تغيير معلومات المجموعه : '..info..'\n⌔︙اضافه مستخدمين : '..invite..'\n⌔︙تثبيت الرسائل : '..pin..'\n⌔︙ارسال الميديا : '..media..'\n⌔︙ارسال الرسائل : '..messges..'\n⌔︙اضافه البوتات : '..other..'\n⌔︙ارسال استفتاء : '..polls..'*\n\n'
-local TextChat = '*\n⌔︙معلومات المجموعه :\nٴ•━━━━━━HAMZA━━━━━━━•ٴ'..' \n⌔︙عدد الادمنيه : ❬ '..Info_Chats.administrator_count..' ❭\n⌔︙عدد المحظورين : ❬ '..Info_Chats.banned_count..' ❭\n⌔︙عدد الاعضاء : ❬ '..Info_Chats.member_count..' ❭\n⌔︙عدد المقيديين : ❬ '..Info_Chats.restricted_count..' ❭\n⌔︙اسم المجموعه : ❬* ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ❭*'
+local permissions = '*\n⌔︙صلاحيات المجموعه :\nٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ'..'\n⌔︙ارسال الويب : '..web..'\n⌔︙تغيير معلومات المجموعه : '..info..'\n⌔︙اضافه مستخدمين : '..invite..'\n⌔︙تثبيت الرسائل : '..pin..'\n⌔︙ارسال الميديا : '..media..'\n⌔︙ارسال الرسائل : '..messges..'\n⌔︙اضافه البوتات : '..other..'\n⌔︙ارسال استفتاء : '..polls..'*\n\n'
+local TextChat = '*\n⌔︙معلومات المجموعه :\nٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ'..' \n⌔︙عدد الادمنيه : ❬ '..Info_Chats.administrator_count..' ❭\n⌔︙عدد المحظورين : ❬ '..Info_Chats.banned_count..' ❭\n⌔︙عدد الاعضاء : ❬ '..Info_Chats.member_count..' ❭\n⌔︙عدد المقيديين : ❬ '..Info_Chats.restricted_count..' ❭\n⌔︙اسم المجموعه : ❬* ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ❭*'
 return LuaTele.sendText(msg_chat_id,msg_id, TextChat..permissions,"md",true)
 end
 if text == 'صلاحيات المجموعه' then
@@ -8599,7 +8599,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(Asd.."Asd:List:Manager"..msg_chat_id.."")
-text = "⌔︙قائمه ردود المدير \nٴ•━━━━━━HAMZA━━━━━━━•ٴ\n"
+text = "⌔︙قائمه ردود المدير \nٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n"
 for k,v in pairs(list) do
 if Redis:get(Asd.."Asd:Add:Rd:Manager:Gif"..v..msg_chat_id) then
 db = "متحركه 🎭"
@@ -8681,7 +8681,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(Asd.."Asd:List:Rd:Sudo")
-text = "\n📝︙قائمة ردود المطور \nٴ•━━━━━━HAMZA━━━━━━━•ٴ\n"
+text = "\n📝︙قائمة ردود المطور \nٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n"
 for k,v in pairs(list) do
 if Redis:get(Asd.."Asd:Add:Rd:Sudo:Gif"..v) then
 db = "متحركه 🎭"
@@ -8744,7 +8744,7 @@ LuaTele.sendText(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -8764,7 +8764,7 @@ LuaTele.sendText(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -8784,7 +8784,7 @@ LuaTele.sendText(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -8856,7 +8856,7 @@ SilentGroup = 'مكتوم'
 else
 SilentGroup = 'غير مكتوم'
 end
-LuaTele.sendText(msg_chat_id,msg_id,"\n*⌔︙معلومات الكشف \nٴ•━━━━━━HAMZA━━━━━━━•ٴ"..'\n⌔︙الحظر العام : '..BanAll..'\n⌔︙الحظر : '..BanGroup..'\n⌔︙الكتم : '..SilentGroup..'\n⌔︙التقييد : '..Restricted..'*',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"\n*⌔︙معلومات الكشف \nٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ"..'\n⌔︙الحظر العام : '..BanAll..'\n⌔︙الحظر : '..BanGroup..'\n⌔︙الكتم : '..SilentGroup..'\n⌔︙التقييد : '..Restricted..'*',"md",true)  
 end
 if text and text:match('^كشف القيود @(%S+)$') then
 local UserName = text:match('^كشف القيود @(%S+)$')
@@ -8901,7 +8901,7 @@ SilentGroup = 'مكتوم'
 else
 SilentGroup = 'غير مكتوم'
 end
-LuaTele.sendText(msg_chat_id,msg_id,"\n*⌔︙معلومات الكشف \nٴ•━━━━━━HAMZA━━━━━━━•ٴ"..'\n⌔︙الحظر العام : '..BanAll..'\n⌔︙الحظر : '..BanGroup..'\n⌔︙الكتم : '..SilentGroup..'\n⌔︙التقييد : '..Restricted..'*',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"\n*⌔︙معلومات الكشف \nٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ"..'\n⌔︙الحظر العام : '..BanAll..'\n⌔︙الحظر : '..BanGroup..'\n⌔︙الكتم : '..SilentGroup..'\n⌔︙التقييد : '..Restricted..'*',"md",true)  
 end
 if text == 'رفع القيود' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -9037,7 +9037,7 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 photo = "https://t.me/xx_pxx/890"
 local T =[[
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ 
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -9084,13 +9084,13 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ⌔︙توجد ← 5 اوامر في البوت
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙ارسل . ‹ م1 › . ~ اوامر الحمايه
 ⌔︙ارسل . ‹ م2 › . ~ اوامر الادمنيه
 ⌔︙ارسل . ‹ م3 › . ~ اوامر المدراء
 ⌔︙ارسل . ‹ م4 › . ~ اوامر المنشئين
 ⌔︙ارسل . ‹ م5 › . ~ اوامر المطور
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'م1' then
 if not msg.Addictive then
@@ -10270,7 +10270,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Asd..'Asd:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-LuaTele.sendText(msg_chat_id,msg_id,'*⌔︙عدد احصائيات البوت الكامله \nٴ•━━━━━━HAMZA━━━━━━━•ٴ\n⌔︙عدد المجموعات : '..(Redis:scard(Asd..'Asd:ChekBotAdd') or 0)..'\n⌔︙عدد المشتركين : '..(Redis:scard(Asd..'Asd:Num:User:Pv') or 0)..'*',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,'*⌔︙عدد احصائيات البوت الكامله \nٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙عدد المجموعات : '..(Redis:scard(Asd..'Asd:ChekBotAdd') or 0)..'\n⌔︙عدد المشتركين : '..(Redis:scard(Asd..'Asd:Num:User:Pv') or 0)..'*',"md",true)  
 end
 if text == 'تغغير كليشه المطور ⌔' then
 if not msg.ControllerBot then 
@@ -10329,7 +10329,7 @@ LuaTele.sendText(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -10349,7 +10349,7 @@ LuaTele.sendText(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -10369,7 +10369,7 @@ LuaTele.sendText(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -10411,7 +10411,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(Asd.."Asd:List:Rd:Sudo")
-text = "\n📝︙قائمة ردود المطور \nٴ•━━━━━━HAMZA━━━━━━━•ٴ\n"
+text = "\n📝︙قائمة ردود المطور \nٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n"
 for k,v in pairs(list) do
 if Redis:get(Asd.."Asd:Add:Rd:Sudo:Gif"..v) then
 db = "متحركه 🎭"
@@ -10563,7 +10563,7 @@ local Info_Members = Redis:smembers(Asd.."Asd:BanAll:Groups")
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙لا يوجد محظورين عام حاليا , ","md",true)  
 end
-ListMembers = '\n*⌔︙قائمه المحظورين عام  \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+ListMembers = '\n*⌔︙قائمه المحظورين عام  \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 var(v)
@@ -10590,7 +10590,7 @@ local Info_Members = Redis:smembers(Asd.."Asd:Developers:Groups")
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙لا يوجد مطورين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌔︙قائمه مطورين البوت \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+ListMembers = '\n*⌔︙قائمه مطورين البوت \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -10616,7 +10616,7 @@ local Info_Members = Redis:smembers(Asd.."Asd:DevelopersQ:Groups")
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙لا يوجد مطورين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌔︙قائمه مطورين البوت \n ٴ•━━━━━━HAMZA━━━━━━━•ٴ*\n'
+ListMembers = '\n*⌔︙قائمه مطورين البوت \n ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -10938,11 +10938,11 @@ data = {
 }
 local TextHelp = [[*
 ⌔︙اوامر الحمايه اتبع مايلي ...
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙قفل ، فتح ← الامر 
 ⌔︙تستطيع قفل حمايه كما يلي ...
 ⌔︙← { بالتقيد ، بالطرد ، بالكتم }
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙الروابط
 ⌔︙المعرف
 ⌔︙التاك
@@ -10952,7 +10952,7 @@ local TextHelp = [[*
 ⌔︙المتحركه
 ⌔︙الملفات
 ⌔︙الصور
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙الماركداون
 ⌔︙البوتات
 ⌔︙التكرار
@@ -10962,7 +10962,7 @@ local TextHelp = [[*
 ⌔︙الفيديو
 ⌔︙الانلاين
 ⌔︙الدردشه
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙التوجيه
 ⌔︙الاغاني
 ⌔︙الصوت
@@ -10996,19 +10996,19 @@ data = {
 }
 local TextHelp = [[*
 ⌔︙اوامر ادمنية المجموعه ...
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙رفع، تنزيل ← مميز
 ⌔︙تاك للكل ، عدد الكروب
 ⌔︙كتم ، حظر ، طرد ، تقيد
 ⌔︙الغاء كتم ، الغاء حظر ، الغاء تقيد
 ⌔︙منع ، الغاء منع 
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙عرض القوائم كما يلي ...
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙المكتومين
 ⌔︙المميزين 
 ⌔︙قائمه المنع
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙تثبيت ، الغاء تثبيت
 ⌔︙الرابط ، الاعدادات
 ⌔︙الترحيب ، القوانين
@@ -11017,11 +11017,11 @@ local TextHelp = [[*
 ⌔︙جهاتي ،ايدي ، رسائلي
 ⌔︙سحكاتي ، مجوهراتي
 ⌔︙كشف البوتات
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙وضع ، ضع ← الاوامر التاليه 
 ⌔︙اسم ، رابط ، صوره
 ⌔︙قوانين ، وصف ، ترحيب
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙حذف ، مسح ← الاوامر التاليه
 ⌔︙قائمه المنع ، المحظورين 
 ⌔︙المميزين ، المكتومين ، القوانين
@@ -11055,26 +11055,26 @@ data = {
 }
 local TextHelp = [[*
 ⌔︙اوامر المدراء في المجموعه
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙رفع ، تنزيل ← ادمن
 ⌔︙الادمنيه 
 ⌔️︙رفع، كشف ← القيود
 ⌔︙تنزيل الكل ← { بالرد ، بالمعرف }
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙لتغيير رد الرتب في البوت
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙تغير رد ← {اسم الرتبه والنص} 
 ⌔︙المطور ، المنشئ الاساسي
 ⌔︙المنشئ ، المدير ، الادمن
 ⌔︙المميز ، العضو
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙تفعيل ، تعطيل ← الاوامر التاليه ↓
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙الايدي ، الايدي بالصوره
 ⌔︙ردود المطور ، ردود المدير
 ⌔︙اطردني ، الالعاب ، الرفع
 ⌔︙الحظر ، الرابط ،
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙تعين ، مسح ←{ الايدي }
 ⌔︙رفع الادمنيه ، مسح الادمنيه
 ⌔︙ردود المدير ، مسح ردود المدير
@@ -11108,12 +11108,12 @@ data = {
 }
 local TextHelp = [[*
 ⌔︙اوامر المنشئ الاساسي
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙رفع ، تنزيل ←{ منشئ }
 ⌔︙المنشئين ، مسح المنشئين
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙اوامر المنشئ المجموعه
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙رفع ، تنزيل ← { مدير }
 ⌔︙المدراء ، مسح المدراء
 ⌔︙اضف رسائل ← { بالرد او الايدي }
@@ -11148,27 +11148,27 @@ data = {
 }
 local TextHelp = [[*
 ⌔︙اوامر المطور الاساسي  
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙حظر عام ، الغاء العام
 ⌔︙اضف ، حذف ← { مطور } 
 ⌔︙قائمه العام ، مسح قائمه العام
 ⌔︙المطورين ، مسح المطورين
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙اضف ، حذف ← { رد للكل }
 ⌔︙وضع ، حذف ← { كليشه المطور } 
 ⌔︙مسح ردود المطور ، ردود المطور 
 ⌔︙تحديث ،  تحديث السورس 
 ⌔︙تعين عدد الاعضاء ← { العدد }
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙تفعيل ، تعطيل ← { الاوامر التاليه ↓}
 ⌔︙البوت الخدمي ، المغادرة ، الاذاعه
 ⌔︙ملف ← { اسم الملف }
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙مسح جميع الملفات 
 ⌔︙المتجر ، الملفات
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙اوامر المطور في البوت
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙تفعيل ، تعطيل ، الاحصائيات
 ⌔︙رفع، تنزيل ← { منشئ اساسي }
 ⌔︙مسح الاساسين ، المنشئين الاساسين 
@@ -11203,7 +11203,7 @@ data = {
 }
 local TextHelp = [[*
 ⌔︙قائمه الالعاب البوت
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙لعبة المختلف » المختلف
 ⌔︙لعبة الامثله » امثله
 ⌔︙لعبة العكس » العكس
@@ -11213,7 +11213,7 @@ local TextHelp = [[*
 ⌔︙لعبة التخمين » خمن
 ⌔︙لعبه الاسرع » الاسرع
 ⌔︙لعبة السمايلات » سمايلات
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙مجوهراتي ← لعرض عدد الارباح
 ⌔︙بيع مجوهراتي ← { العدد } ← لبيع كل مجوهره مقابل {50} رساله
 *]]
@@ -11247,13 +11247,13 @@ data = {
 }
 local TextHelp = [[*
 ⌔︙توجد ← 5 اوامر في البوت
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 ⌔︙ارسل . ‹ م1 › . ~ اوامر الحمايه
 ⌔︙ارسل . ‹ م2 › . ~ اوامر الادمنيه
 ⌔︙ارسل . ‹ م3 › . ~ اوامر المدراء
 ⌔︙ارسل . ‹ م4 › . ~ اوامر المنشئين
 ⌔︙ارسل . ‹ م5 › . ~ اوامر المطور
-ٴ•━━━━━━HAMZA━━━━━━━•ٴ
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -12182,7 +12182,7 @@ data = {
 {text = 'تعطيل الترحيب', data = IdUser..'/'.. 'unmute_welcome'},{text = 'تفعيل الترحيب', data = IdUser..'/'.. 'mute_welcome'},
 },
 {
-{text = 'تعطيل الايدي', data = IdUser..'/'.. 'unmute_Id'},{text = 'تفعيل الايدي', data = IdUser..'/'.. 'mute_Id'},
+{text = 'اتعطيل الايدي', data = IdUser..'/'.. 'unmute_Id'},{text = 'اتفعيل الايدي', data = IdUser..'/'.. 'mute_Id'},
 },
 {
 {text = 'تعطيل الايدي بالصوره', data = IdUser..'/'.. 'unmute_IdPhoto'},{text = 'تفعيل الايدي بالصوره', data = IdUser..'/'.. 'mute_IdPhoto'},

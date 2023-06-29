@@ -1506,7 +1506,7 @@ text = text:gsub('"',"")
 text = text:gsub('"',"") 
 text = text:gsub("`","") 
 text = text:gsub("*","") 
-Redis:set(Asd.."Asd:Add:Rd:Manager:Text"..test..msg_chat_id,'[' ..text..']')  
+Redis:set(Asd.."Asd:Add:Rd:Manager:Text"..test..msg_chat_id,'['..text..']')  
 end  
 if msg.content.audio then
 Redis:set(Asd.."Asd:Add:Rd:Manager:Audio"..test..msg_chat_id, msg.content.audio.audio.remote.id)  
@@ -1534,13 +1534,13 @@ end
 print(idPhoto)
 Redis:set(Asd.."Asd:Add:Rd:Manager:Photo"..test..msg_chat_id, idPhoto)  
 end
-return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم حفظ رد للمدير بنجاح \n⌔︙ارسل ( "..test.." ) لرئية الرد","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم حفظ رد للمدير بنجاح \n⌔︙ارسل ( ["..test.."] ) لرئية الرد","md",true)  
 end  
 end
 if text and text:match("^(.*)$") then
 if Redis:get(Asd.."Asd:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id) == "true" then
 Redis:set(Asd.."Asd:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true1")
-Redis:set(Asd.."Asd:Text:Manager"..msg.sender.user_id..":"..msg_chat_id,text)
+Redis:set(Asd.."Asd:Text:Manager"..msg.sender.user_id..":"..msg_chat_id, text)
 Redis:del(Asd.."Asd:Add:Rd:Manager:Gif"..text..msg_chat_id)   
 Redis:del(Asd.."Asd:Add:Rd:Manager:Vico"..text..msg_chat_id)   
 Redis:del(Asd.."Asd:Add:Rd:Manager:Stekrs"..text..msg_chat_id)     
@@ -1656,7 +1656,7 @@ local Texingt = Texingt:gsub('#id',msg.sender.user_id)
 local Texingt = Texingt:gsub('#edit',NumMessageEdit)
 local Texingt = Texingt:gsub('#msgs',NumMsg)
 local Texingt = Texingt:gsub('#stast',Status_Gps)
-LuaTele.sendText(msg_chat_id,msg_id,'['..Texingt..']',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,Texingt,"md",true)  
 end
 if video_note then
 LuaTele.sendVideoNote(msg_chat_id, msg.id, video_note)

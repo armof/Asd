@@ -1534,13 +1534,13 @@ end
 print(idPhoto)
 Redis:set(Asd.."Asd:Add:Rd:Manager:Photo"..test..msg_chat_id, idPhoto)  
 end
-return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم حفظ رد للمدير بنجاح \n⌔︙ارسل ( ["..test.."] ) لرئية الرد","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم حفظ رد للمدير بنجاح \n⌔︙ارسل (["..test.."]) لرئية الرد","md",true)  
 end  
 end
 if text and text:match("^(.*)$") then
 if Redis:get(Asd.."Asd:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id) == "true" then
 Redis:set(Asd.."Asd:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true1")
-Redis:set(Asd.."Asd:Text:Manager"..msg.sender.user_id..":"..msg_chat_id,'['..text..']')
+Redis:set(Asd.."Asd:Text:Manager"..msg.sender.user_id..":"..msg_chat_id,text)
 Redis:del(Asd.."Asd:Add:Rd:Manager:Gif"..text..msg_chat_id)   
 Redis:del(Asd.."Asd:Add:Rd:Manager:Vico"..text..msg_chat_id)   
 Redis:del(Asd.."Asd:Add:Rd:Manager:Stekrs"..text..msg_chat_id)     
@@ -1550,7 +1550,7 @@ Redis:del(Asd.."Asd:Add:Rd:Manager:Video"..text..msg_chat_id)
 Redis:del(Asd.."Asd:Add:Rd:Manager:File"..text..msg_chat_id)
 Redis:del(Asd.."Asd:Add:Rd:Manager:video_note"..text..msg_chat_id)
 Redis:del(Asd.."Asd:Add:Rd:Manager:Audio"..text..msg_chat_id)
-Redis:sadd(Asd.."Asd:List:Manager"..msg_chat_id.."", '['..text..']')
+Redis:sadd(Asd.."Asd:List:Manager"..msg_chat_id.."",text)
 LuaTele.sendText(msg_chat_id,msg_id,[[
 ↯︙ارسل لي الرد سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
